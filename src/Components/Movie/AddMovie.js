@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MovieService from "../Service/MovieService";
+import MovieService from "../../Service/MovieService";
 import { useParams } from "react-router-dom";
 
 const AddMovieForm = () => {
@@ -18,7 +18,6 @@ const AddMovieForm = () => {
   });
 
   const { movieId } = useParams();
-  // console.log(movieId)
 
   const handleChange = (e) => {
     setMovieData({ ...movieData, [e.target.name]: e.target.value });
@@ -42,7 +41,6 @@ const AddMovieForm = () => {
     console.log(movieData);
   };
 
-
   useEffect(() => {
     if (movieId) {
       MovieService.getMovieById(movieId)
@@ -56,24 +54,37 @@ const AddMovieForm = () => {
     }
   }, [movieId]);
 
-
-
   const title = () => {
     if (movieId) {
       return (
-        <p className="px-5 flex justify-center text-2xl font-bold text-gray-800 uppercase">
-          UPDATE THE MOVIE DETAILS
-        </p>
+        <div className="justify-center">
+          <p className="px-5 pb-6 flex justify-center text-3xl font-bold text-gray-800 uppercase">
+            UPDATE THE MOVIE DETAILS
+          </p>
+          {/* <a
+            href="/movieDetails"
+            className=" font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+          >
+            BACK
+          </a> */}
+        </div>
       );
     } else {
       return (
-        <p className="px-5 flex justify-center text-2xl font-bold text-gray-800 uppercase">
-          ADD THE MOVIE DETAILS
-        </p>
+        <div className="justify-center">
+          <p className=" px-5 pb-6 flex justify-center text-3xl font-bold text-gray-800 uppercase">
+            ADD THE MOVIE DETAILS
+          </p>
+          {/* <a
+            href="/movieDetails"
+            className="font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+          >
+            BACK
+          </a> */}
+        </div>
       );
     }
   };
-
 
   const handleGenreChange = (e) => {
     const genreArr = e.target.value.split(",");
@@ -83,7 +94,6 @@ const AddMovieForm = () => {
     });
   };
 
-
   const handleCrewChange = (e) => {
     const crewArr = e.target.value.split(",");
     setMovieData({
@@ -92,16 +102,12 @@ const AddMovieForm = () => {
     });
   };
 
-
   return (
     <form className="max-w-lg mx-auto mt-8" onSubmit={handleSubmit}>
-      <div>
-        {title()}
-        
-      </div>
+      <div>{title()}</div>
 
       <div className="mt-4">
-        <label htmlFor="title" className=" block text-gray-700 font-medium">
+        <label htmlFor="title" className=" block text-gray-700 font-bold pb-4">
           Movie Title:
         </label>
         <input

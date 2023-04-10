@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import MovieService from "../Service/MovieService";
+import MovieService from "../../Service/MovieService";
 // import { useParams } from "react-router-dom";
 
-export const MovieTable = () => {
+const MovieTable = () => {
   const [movie, setMovie] = useState([]);
   
   useEffect(() => {
@@ -24,14 +24,21 @@ export const MovieTable = () => {
 
 
   const deleteMovie = (movieId)=>{
-    MovieService.deleteMovie(movieId).then((response)=>{
-      getAllMvs()
-      window.alert("Successfully Deleted" + movieId)
-
-    }).catch(error=>{
-      console.log(error);
-    })
+    MovieService.deleteMovie(movieId)
+  .then((response) => {
+    window.alert("Successfully Deleted" + movieId);
+  })
+  .then(() => {
+    getAllMvs();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+    
   }
+  
+  
+
 
 
 
@@ -164,3 +171,5 @@ export const MovieTable = () => {
     </div>
   );
 };
+
+export default MovieTable;
