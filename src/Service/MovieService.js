@@ -27,4 +27,5 @@ class MovieService{
     }
 
 }
-export default new MovieService();
+const MovieServiceInstance = new MovieService();
+export default MovieServiceInstance;

@@ -45,23 +45,31 @@ const Navbar = () => {
               >
                 Theatres
               </a>
+              
               <a
-                href="/feedback"
+                href="/promotions"
+                className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
+              >
+                Promotions
+              </a>
+              <a
+                href="/feedbacks"
                 className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
               >
                 Feedback
+              </a>
+              
+              <a
+                href="/contact"
+                className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
+              >
+                Contact
               </a>
               <a
                 href="/about"
                 className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
               >
                 About
-              </a>
-              <a
-                href="/contact"
-                className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
-              >
-                Contact
               </a>
               <a
                 href="/login"

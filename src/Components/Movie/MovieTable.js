@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MovieService from "../../Service/MovieService";
-// import { useParams } from "react-router-dom";
 
 const MovieTable = () => {
   const [movie, setMovie] = useState([]);
@@ -49,12 +49,14 @@ const MovieTable = () => {
         <h1 className="p-4">Movie Data List: ADMIN</h1>
       </div>
       <div className="p-4 flex">
-        <a
+        {/* <a
           href="/addMovie"
           className="font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
         >
           Add Movie
-        </a>
+        </a> */}
+
+        <Link to="/addMovie" className="font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded" > Add Movie</Link>
       </div>
 
       <div className="flex flex-col">
@@ -108,6 +110,7 @@ const MovieTable = () => {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {movie.map((movie) => (
                     <tr key={movie.MovieId}>
+
                       <td className="px-2 py-1 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="ml-4">
@@ -118,39 +121,44 @@ const MovieTable = () => {
                           </div>
                         </div>
                       </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
                           {movie.title}
                         </div>
                       </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
                           {movie.language}
                         </div>
                       </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
                           {movie.releaseDate}
                         </div>
                       </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
                           {movie.runtime}
                         </div>
                       </td>
-                      {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {person.role}
-                          </td> */}
+
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="p-4 flex">
-                          <a
+                          {/* <a
                             href={`/updateMovie/${movie.movieId}`}
                             className="font-sans bg-transparent hover:bg-gray-500 text-gray-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
                           >
                             Edit
-                          </a>
+                          </a> */}
+
+                          <Link to={`/updateMovie/${movie.movieId}`} className="font-sans bg-transparent hover:bg-gray-500 text-gray-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"> Edit</Link>
                         </div>
                       </td>
+
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="p-4 flex">
                           <button 

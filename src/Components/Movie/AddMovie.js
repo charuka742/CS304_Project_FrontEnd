@@ -274,7 +274,7 @@ const AddMovieForm = () => {
           Runtime (min):
         </label>
         <input
-          type="text"
+          type="number"
           name="runtime"
           id="runtime"
           placeholder="Runtime in min:"

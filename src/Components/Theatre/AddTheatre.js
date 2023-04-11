@@ -60,12 +60,6 @@ const AddTheatre = () => {
           <p className="px-5 pb-6 flex justify-center text-3xl font-bold text-gray-800 uppercase">
             UPDATE THE THEATRE DETAILS
           </p>
-          {/* <a
-            href="/movieDetails"
-            className=" font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
-          >
-            BACK
-          </a> */}
         </div>
       );
     } else {
@@ -74,35 +68,13 @@ const AddTheatre = () => {
           <p className=" px-5 pb-6 flex justify-center text-3xl font-bold text-gray-800 uppercase">
             ADD THE THEATRE DETAILS
           </p>
-          {/* <a
-            href="/movieDetails"
-            className="font-sans bg-transparent hover:bg-blue-500 text-blue-700 font-bold uppercase hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
-          >
-            BACK
-          </a> */}
         </div>
       );
     }
   };
 
-  // const handleGenreChange = (e) => {
-  //   const genreArr = e.target.value.split(",");
-  //   settheatreData({
-  //     ...theatreData,
-  //     genre: genreArr,
-  //   });
-  // };
-
-  // const handleCrewChange = (e) => {
-  //   const crewArr = e.target.value.split(",");
-  //   settheatreData({
-  //     ...theatreData,
-  //     crew: crewArr,
-  //   });
-  // };
-
   return (
-    <section className="mt-50 mb-50 flex justify-center items-center h-screen shadow-5xl rounded-xl">
+    <section className="mt-10 mb-10 flex justify-center items-center  shadow-5xl rounded-xl">
       <div className="w-full max-w-xl">
         <form
           className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4"
@@ -269,11 +241,8 @@ const AddTheatre = () => {
           </div>
           <div className="mt-4">
             <p className="block text-gray-700 font-medium">
-              Total No of Seats in {theatreData.theatreName} is{" "}
-              {theatreData.vipSeats +
-                theatreData.standardSeats +
-                theatreData.premiumSeats}
-              .
+              Total No of Seats in {`theatreData.theatreName`} is {" "}
+              
             </p>
           </div>
           <div className="flex mt-4">
