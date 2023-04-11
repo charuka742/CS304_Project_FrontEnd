@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MovieService from "../../Service/MovieService";
+import MovieServiceInstance from "../../Service/MovieService";
 
 const MovieTable = () => {
   const [movie, setMovie] = useState([]);
@@ -12,7 +12,7 @@ const MovieTable = () => {
 
 
   const getAllMvs=()=>{
-    MovieService.getAllMvs()
+    MovieServiceInstance.getAllMvs()
       .then((response) => {
         setMovie(response.data);
         console.log(response.data);
@@ -24,7 +24,7 @@ const MovieTable = () => {
 
 
   const deleteMovie = (movieId)=>{
-    MovieService.deleteMovie(movieId)
+    MovieServiceInstance.deleteMovie(movieId)
   .then((response) => {
     window.alert("Successfully Deleted" + movieId);
   })
@@ -84,11 +84,43 @@ const MovieTable = () => {
                     >
                       Language
                     </th>
+                    {/* <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Description
+                    </th> */}
+                    
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      ReleaseDate
+                      Rating
+                    </th>
+
+                    {/* <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Trailer Link
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Banner Link
+                    </th> */}
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Director
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Release Date
                     </th>
                     <th
                       scope="col"
@@ -131,6 +163,35 @@ const MovieTable = () => {
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
                           {movie.language}
+                        </div>
+                      </td>
+
+                      {/* <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {movie.description}
+                        </div>
+                      </td> */}
+
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {movie.rating}
+                        </div>
+                      </td>
+
+                      {/* <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {movie.trailerLink}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {movie.bannerLink}
+                        </div>
+                      </td> */}
+
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">
+                          {movie.director}
                         </div>
                       </td>
 

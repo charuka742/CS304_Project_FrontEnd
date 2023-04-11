@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UserService from "../Service/UserService";
+import UserServiceInstance from "../Service/UserService";
 import { useParams } from "react-router-dom";
 
 const SignUp = () => {
@@ -22,7 +22,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      UserService.addUser(userData)
+      UserServiceInstance.addUser(userData)
         .then((response) => {
           console.log(response);
         })
@@ -39,8 +39,8 @@ const SignUp = () => {
 
   
   useEffect(() => {
-    if (userData) {
-      UserService.getUserById(UserId)
+    if (UserId) {
+      UserServiceInstance.getUserById(UserId)
         .then((response) => {
           console.log(response);
           setUserData(response.data);
@@ -50,6 +50,7 @@ const SignUp = () => {
         });
     }
   }, [UserId]);
+
 
   return (
     <section className="mt-20 mb-20 flex justify-center items-center h-screen shadow-5xl rounded-xl ">
@@ -66,14 +67,14 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="name"
             >
-              Name
+              Name:
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
+              name="name" 
               placeholder="Enter your name"
-              name="name"
               value={userData.name}
               onChange={handleChange}
             />
@@ -84,7 +85,7 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="city"
             >
-              City
+              City:
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -102,7 +103,7 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="mobileNo"
             >
-              Mobile No
+              Mobile No:
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -117,7 +118,7 @@ const SignUp = () => {
 
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="dob">
-              Date of birth
+              Date of birth:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -136,7 +137,7 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="email"
             >
-              Email Address
+              Email Address:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -154,7 +155,7 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="role"
             >
-              Role
+              Role:
             </label>
             <select
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -176,7 +177,7 @@ const SignUp = () => {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="password"
             >
-              Password
+              Password:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

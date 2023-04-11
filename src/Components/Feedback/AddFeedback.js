@@ -3,7 +3,7 @@ import Rating from "react-rating";
 import { FiSend } from "react-icons/fi";
 import { HiOutlineStar, HiStar } from "react-icons/hi";
 
-const FeedbackPage = () => {
+const AddFeedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [newFeedback, setNewFeedback] = useState("");
   const [rating, setRating] = useState(0);
@@ -105,4 +105,4 @@ const FeedbackPage = () => {
     </div>
   );
 };
-export default FeedbackPage;
+export default AddFeedback;

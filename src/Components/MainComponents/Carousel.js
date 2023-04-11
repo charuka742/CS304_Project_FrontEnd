@@ -114,7 +114,7 @@ const items = [
 
 const Carousel = () => {
   return (
-    <div className="w-full">
+    <div className="h-full">
       <Slider {...settings}>
         {items.map((item) => (
           <div key={item.id} className="p-4">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TheatreService from "../../Service/TheatreService";
+import TheatreServiceInstance from "../../Service/TheatreService";
 import { Link } from "react-router-dom";
 
 const TheatreTable = () => {
@@ -10,7 +10,7 @@ const TheatreTable = () => {
   }, []);
 
   const getTheatres = () => {
-    TheatreService.getAllTheatres()
+    TheatreServiceInstance.getAllTheatres()
       .then((response) => {
         setTheatre(response.data);
         console.log(response.data);
@@ -21,9 +21,9 @@ const TheatreTable = () => {
   };
 
   const deleteTheatre = (theatreId) => {
-    TheatreService.deleteTheatre(theatreId)
+    TheatreServiceInstance.deleteTheatre(theatreId)
       .then((response) => {
-        window.alert("Successfully Deleted" + theatreId);
+        window.alert("Successfully Deleted " + theatreId);
       })
       .then(() => {
         getTheatres();
@@ -70,19 +70,21 @@ const TheatreTable = () => {
                       scope="col"
                       className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
+                      
                       City
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      email
+                    Contact No
+                      
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Contact No
+                      email
                     </th>
                     <th
                       scope="col"
@@ -223,7 +225,9 @@ const TheatreTable = () => {
                             Edit
                           </a> */}
 
-                          <Link to={`/updateTheatre/${theatre.theatreId}`} className="font-sans bg-transparent hover:bg-gray-500 text-gray-700 font-bold uppercase hover:text-white py-2 px-2 border border-gray-500 hover:border-transparent rounded" > Add Movie</Link>
+                          <Link to={`/updateTheatre/${theatre.theatreId}`} className="font-sans bg-transparent hover:bg-gray-500 text-gray-700 font-bold uppercase hover:text-white py-2 px-2 border border-gray-500 hover:border-transparent rounded" >
+                             Edit
+                             </Link>
 
                         </div>
                       </td>

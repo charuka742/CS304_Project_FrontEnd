@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import TheatreService from "../../Service/TheatreService";
 import { useParams } from "react-router-dom";
+import TheatreServiceInstance from "../../Service/TheatreService";
 
 const AddTheatre = () => {
   const [theatreData, setTheatreData] = useState({
@@ -25,7 +25,7 @@ const AddTheatre = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      TheatreService.AddTheatre(theatreData)
+      TheatreServiceInstance.addTheatre(theatreData)
         .then((response) => {
           console.log(response);
         })
@@ -42,7 +42,7 @@ const AddTheatre = () => {
 
   useEffect(() => {
     if (theatreId) {
-      TheatreService.getMovieById(theatreId)
+      TheatreServiceInstance.getMovieById(theatreId)
         .then((response) => {
           console.log(response);
           setTheatreData(response.data);
@@ -74,13 +74,13 @@ const AddTheatre = () => {
   };
 
   return (
-    <section className="mt-10 mb-10 flex justify-center items-center  shadow-5xl rounded-xl">
-      <div className="w-full max-w-xl">
+    <section className="mt-6 mb-6 px-60 flex justify-center items-center  shadow-5xl rounded-xl">
+      <div className="w-full max-w-xl justify-center">
         <form
           className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit}
         >
-          <div>{title()}</div>
+          <div className="text-2xl font-bold mb-6 text-center uppercase">{title()}</div>
 
           <div className="mt-4">
             <label
@@ -101,21 +101,7 @@ const AddTheatre = () => {
             />
           </div>
 
-          <div className="mt-4">
-            <label htmlFor="email" className=" block text-gray-700 font-medium">
-              Email:
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Enter Theatre email:"
-              value={theatreData.email}
-              onChange={handleChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
+          
           <div className="mt-4">
             <label htmlFor="city" className=" block text-gray-700 font-medium">
               City:
@@ -131,6 +117,22 @@ const AddTheatre = () => {
               required
             />
           </div>
+          <div className="mt-4">
+            <label htmlFor="email" className=" block text-gray-700 font-medium">
+              Email:
+            </label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter Theatre email:"
+              value={theatreData.email}
+              onChange={handleChange}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          
           <div className="mt-4">
             <label
               htmlFor="teleNo"
@@ -241,8 +243,7 @@ const AddTheatre = () => {
           </div>
           <div className="mt-4">
             <p className="block text-gray-700 font-medium">
-              Total No of Seats in {`theatreData.theatreName`} is {" "}
-              
+              Total No of Seats in {`theatreData.theatreName`} is{" "}
             </p>
           </div>
           <div className="flex mt-4">

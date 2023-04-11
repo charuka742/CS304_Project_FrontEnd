@@ -19,7 +19,7 @@ function Sidebar() {
   return (
     <aside
       className={`bg-gray-900 text-gray-500 ${
-        isMobile ? "h-screen" : "h-screen"
+        isMobile ? " h-auto" : "h-auto"
       } w-64 flex flex-col ${isMobile ? "absolute top-0 left-0 z-50" : ""}`}
     >
       <div className="uppercase p-4 flex items-center justify-between">

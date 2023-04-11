@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import img from "../Assets/google.png"
 import { FcFilmReel } from "react-icons/fc";
 import { HiMenu } from "react-icons/hi";
+// import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-neutral-100 dark:bg-cyan-600">
-      <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-neutral-100 max-w-10xl dark:bg-cyan-600">
+      <div className="max-w-10xl mx-auto  px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <a href="/">
@@ -53,7 +54,7 @@ const Navbar = () => {
                 Promotions
               </a>
               <a
-                href="/feedbacks"
+                href="/feedbackList"
                 className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
               >
                 Feedback
@@ -113,11 +114,14 @@ const Navbar = () => {
             Theatres
           </a>
           <a
-            href="/feedback"
+            href="/feedbackAll"
             className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"
           >
             Feedback
           </a>
+          
+          {/* <Link to="" className="ml-4 mt-3 px-3 py-2 rounded-md text-md font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out">Feedback</Link> */}
+          
           <a
             href="/about"
             className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-50 focus:outline-none focus:text-neutral-900 dark:focus:text-neutral-50 focus:bg-neutral-100 dark:focus:bg-cyan-600 transition duration-150 ease-in-out"

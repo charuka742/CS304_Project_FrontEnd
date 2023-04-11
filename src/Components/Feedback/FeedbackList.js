@@ -25,7 +25,7 @@ const feedbacks = [
   },
 ];
 
-const FeedbackAll = () => {
+const FeedbackList = () => {
   const [selectedFeedback, setSelectedFeedback] = useState(null);
 
   const handleFeedbackClick = (feedback) => {
@@ -90,4 +90,4 @@ const FeedbackAll = () => {
   );
 };
 
-export default FeedbackAll;
+export default FeedbackList;
